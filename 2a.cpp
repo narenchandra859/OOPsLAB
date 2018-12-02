@@ -31,7 +31,7 @@ int main() {
 	int n;
 	cout<<"\nEnter number of employees : ";
 	cin>>n;
-	Employee *e=new Employee[5];
+	Employee *e=new Employee[n];
 	for(int i=0;i<n;i++) {
 		e[i].read();
 		e[i].cal();
