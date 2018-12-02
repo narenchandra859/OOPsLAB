@@ -35,7 +35,8 @@ int main() {
 	for(int i=0;i<n;i++) {
 		e[i].read();
 		e[i].cal();
-		e[i].print();
 	}
+	for(int i=0;i<n;i++) 
+		e[i].print();
 	return 0;
 }
