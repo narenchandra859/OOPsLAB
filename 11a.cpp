@@ -10,40 +10,26 @@ class B:public A{
                 B(){cout<<"\nB constructor called";}
                 ~B(){cout<<"\nB destructor called";}
 };     
-class C:public B{
+class C{
         public:
                 C(){cout<<"\nC constructor called";}
                 ~C(){cout<<"\nC destructor called";}
 };     
-class D{
+class D:public B, public C{
         public:
                 D(){cout<<"\nD constructor called";}
                 ~D(){cout<<"\nD destructor called";}
-};     
-class E{
-        public:
-                E(){cout<<"\nE constructor called";}
-                ~E(){cout<<"\nE destructor called";}
-};     
-class F:public D, public E{
-        public:
-                F(){cout<<"\nF constructor called";}
-                ~F(){cout<<"\nF destructor called";}
-};    
+};      
 int main() {
-	cout<<"\n\t\tClass A, B, C are in MULTILEVEL inheritance : A-->B-->C \n";
+	cout<<"\n\t\tClass A, B, D are in MULTILEVEL inheritance : A-->B-->D \n";
+	cout<<"\n\t\tClass B,C,D are in MULTPLE inheritance B-->D<--C \n";
 	cout<<"\nC-D call for A : ";
 	{ A a; }
 	cout<<"\nC-D call for B : ";
 	{ B b; }
 	cout<<"\nC-D call for C : ";
 	{ C c; }
-	cout<<"\n\t\tClass D, E, F are in MULTPLE inheritance D-->F<--E \n";
 	cout<<"\nC-D call for D : ";
         { D d; }
-        cout<<"\nC-D call for E : ";
-        { E e; }
-        cout<<"\nC-D call for F : ";
-        { F f; }
 	return 0;
 }
